@@ -39,7 +39,7 @@ oldsig() {
 
 start_cmd() {
   if [ `whoami` = root ]; then
-    su - $DAEMON_USER -c "cd $APP_PATH > /dev/null 2>&1 && $DAEMON $DAEMON_ARGS"
+    su $DAEMON_USER -c "cd $APP_PATH > /dev/null 2>&1 && $DAEMON $DAEMON_ARGS"
   else
     cd $APP_PATH > /dev/null 2>&1 && $DAEMON $DAEMON_ARGS
   fi
